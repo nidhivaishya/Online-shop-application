@@ -73,7 +73,7 @@ class Accounts with ChangeNotifier {
     final userIndex = _details.indexWhere((user) => user.id == id);
     if (userIndex >= 0) {
       final url =
-          'https://shopify-5113b-default-rtdb.firebaseio.com/AccountDetails/$id.json?auth=$authToken';
+          'yourproject.firebaseio.com/AccountDetails/$id.json?auth=$authToken';
       await http.patch(url,
           body: json.encode({
             'name': newAccountDetails.name,
