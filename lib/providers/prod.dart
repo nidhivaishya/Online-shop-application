@@ -11,7 +11,7 @@ class Prod {
   static Future<List<String>> searchProduct({@required String query}) async {
     final limit = 3;
     final url =
-        'https://shopify-5113b-default-rtdb.firebaseio.com/products/?q=$query&limit=$limit&appid=$apiKey';
+        'https://yourproject.firebaseio.com/products/?q=$query&limit=$limit&appid=$apiKey';
 
     final response = await http.get(url);
     final body = json.decode(response.body);
@@ -26,7 +26,7 @@ class Prod {
 
   static Future<Product> getProduct({@required String title}) async {
     final url =
-        'https://shopify-5113b-default-rtdb.firebaseio.com/?q=$title&appid=$apiKey';
+        'https://yourproject.firebaseio.com/?q=$title&appid=$apiKey';
 
     final response = await http.get(url);
     final body = json.decode(response.body);
