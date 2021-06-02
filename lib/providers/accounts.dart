@@ -26,7 +26,7 @@ class Accounts with ChangeNotifier {
     final filterString =
         filterByUser ? 'orderBy="creatorId"&equalTo="$userId"' : '';
     var url =
-        'https://shopify-5113b-default-rtdb.firebaseio.com/AccountDetails.json?auth=$authToken&$filterString';
+        'https://yourproject.firebaseio.com/AccountDetails.json?auth=$authToken&$filterString';
     try {
       final response = await http.get(url);
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
@@ -40,7 +40,7 @@ class Accounts with ChangeNotifier {
 
   Future<void> addAccountDetails(Account account) async {
     final url =
-        'https://shopify-5113b-default-rtdb.firebaseio.com/AccountDetails.json?auth=$authToken';
+        'https://yourproject.firebaseio.com/AccountDetails.json?auth=$authToken';
     try {
       final response = await http.post(
         url,
